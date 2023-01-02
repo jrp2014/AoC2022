@@ -1,14 +1,16 @@
 {-# LANGUAGE LambdaCase #-}
 module Day07.Day07 where
 
-import Data.List
+import Data.List ( foldl', find, sort, tails )
 import qualified Data.Map as M
-import           Data.Maybe (mapMaybe)
-import Data.Foldable
-import Data.Maybe
+import Data.Foldable ( Foldable(toList) )
+import Data.Maybe ( mapMaybe, fromJust )
 
 
-data CDDest = Root | GoUp | GoDown String
+data CDDest where
+  Root :: CDDest
+  GoUp :: CDDest
+  GoDown :: String -> CDDest
   deriving (Eq, Show, Ord)
 
 data Instr = CD CDDest | File Int

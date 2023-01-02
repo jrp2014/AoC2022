@@ -1,8 +1,7 @@
 module Day06.Day06 where
 
 import qualified Data.Set as S
-
-import Data.List
+import Data.List ( tails, transpose )
 
 
 
